@@ -18,6 +18,11 @@ function List() {
             <ul>naik</ul>
             <ul>naik</ul>
         </list>
+        <list>
+            <ul>ramu</ul>
+            <ul>rakesh</ul>
+            <ul>sai</ul>
+        </list>
         </div>
         </center>
     )
