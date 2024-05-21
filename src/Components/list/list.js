@@ -13,6 +13,11 @@ function List() {
             <ul>Bhukya</ul>
             <ul>Bhukya</ul>
         </list>
+        <list>
+            <ul>naik</ul>
+            <ul>naik</ul>
+            <ul>naik</ul>
+        </list>
         </div>
         </center>
     )

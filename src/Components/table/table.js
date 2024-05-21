@@ -71,6 +71,7 @@ function Table() {
                     <td style={cellStyle}>6303064263</td>
                 </tr>
             
+
         </table>
         <div>
             <br></br>
