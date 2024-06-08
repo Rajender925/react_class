@@ -1,19 +1,9 @@
 
+import { Component } from "react"
 
-function Image() {
-    return (
-        <center>
-        <div>
-          <h1>IMAGE CREATION :</h1>
-            <img src="https://th.bing.com/th/id/OIP.XahRQHnmZYdKTkYxKAYHmAHaFj?rs=1&pid=ImgDetMain" alt="Rajender" />
-            <div><span>Dipika Pilli</span></div>
-
-            <div>
-                <br></br>
-            </div>
-        </div>
-        </center>
-    );
+class Image extends Component {
+   render() {
+    return <img src={this.props.src} height="25%" width="35%" style={{borderRadius:"10%"}}/>;
+   }
 }
-
 export default Image;

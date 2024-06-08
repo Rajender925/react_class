@@ -1,25 +1,11 @@
-function List() {
-    return(
-        <center>
-        <div>
-        <h1>List creation : </h1>
-        <list>
-            <ol>Rajender</ol>
-            <ol>Rajender</ol>
-            <ol>Rajender</ol>
-        </list>
-        <list>
-            <ul>Bhukya</ul>
-            <ul>Bhukya</ul>
-            <ul>Bhukya</ul>
-        </list>
-        <list>
-            <ul>naik</ul>
-            <ul>naik</ul>
-            <ul>naik</ul>
-        </list>
-        </div>
-        </center>
-    )
-}
-export default List;
+
+ const List1 = (prop) => {
+    const {list} = prop;
+    return 
+    <center>
+    <h3>category : {list}</h3>
+    </center>
+  
+ }
+
+export default List1;

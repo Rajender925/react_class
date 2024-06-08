@@ -20,6 +20,7 @@ circleClicked = (index) => {
 
 countRedCircles = () => {
     return this.state.Circle.filter(circle => circle === true).length;
+    
 };
 
 countBlueCircles = () => {
@@ -32,7 +33,7 @@ countBlueCircles = () => {
             <button onClick={this.Addcircle}>Add circle</button>
             <h2 >Total Circle Count : {this.state.Circle.length}</h2>
             <h2>Red Circle Count : {this.countRedCircles()}</h2>
-            <h2>Red Circle Count : {this.countBlueCircles()}</h2>
+            <h2>Blue Circle Count : {this.countBlueCircles()}</h2>
           
             {
                 this.state.Circle.map((eachCircle,index)=>{
