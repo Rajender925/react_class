@@ -8,20 +8,15 @@ import List from './Components/list/list';
 import Form from './Components/forms/form';
 import Button from './Components/button/button';
 import reportWebVitals from './reportWebVitals';
+import CircleGen from './Components/Circle/circleGenerate';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <Hello />
-    <Table />
-    <Image />
-    <List />
-    <Form />
-    <Button />
-  </React.StrictMode>
+  <>
+   <CircleGen />
+   
+  </>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
 reportWebVitals();
