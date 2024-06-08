@@ -8,11 +8,12 @@ import List from './Components/list/list';
 import Form from './Components/forms/form';
 import Button from './Components/button/button';
 import reportWebVitals from './reportWebVitals';
+import CircleGen from './Components/Circle/circleGenerate';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-    <Hello />
+   <CircleGen />
    
   </>
 );
