@@ -1,6 +1,5 @@
 import { Component } from "react";
 import Image from "../image/image";
-import ListComponent from "../list/list";
 
 class FilterProducts extends Component {
 
@@ -8,28 +7,9 @@ class FilterProducts extends Component {
      products:[],
      isSuc:false
     }
-    state={
-        mensProduct:[],
-        isMen:false
-    }
+   
 
-    state={
-        womensProduct:[],
-        isWomen:false
-    }
-
-    state={
-        jewellaryProduct:[],
-        isjwewllary:false
-    }
-
-
-    state = {
-
-        electronicsProduct:[],
-        isElectronic:false
-    }
-    
+   
 
     allCategery=()=> {
         fetch("https://fakestoreapi.com/products")
@@ -38,10 +18,7 @@ class FilterProducts extends Component {
             this.setState({
                 products:response,
                 isSuc:true,
-                isWomen:false,
-                isMen:false,
-                isElectronic:false,
-                isjwewllary:false,
+               
 
             }
             
@@ -60,11 +37,9 @@ mens = () => {
         if (mensProducts.length > 0) {
           this.setState({
             isSuc:false,
-            isWomen:false,
-            isjwewllary:false,
-            isElectronic:false,
-            mensProduct: mensProducts, 
-            isMen: true
+             products:[],
+             products:mensProducts,
+             isSuc:true
           });
         }
         
@@ -85,12 +60,10 @@ womens = () => {
         const womensProducts = response.filter((product) => product.category === "women's clothing");
         if (womensProducts.length > 0) {
           this.setState({
-            isSuc:false,
-            isMen:false,
-            isjwewllary:false,
-            isElectronic:false,
-            womensProduct:womensProducts, 
-            isWomen: true
+                isSuc:false,
+                 products:[],
+                 products:womensProducts,
+                 isSuc:true
           });
         }
         
@@ -109,12 +82,10 @@ jewellary = () => {
         const jewellaryProducts = response.filter((product) => product.category === "jewelery");
         if (jewellaryProducts.length > 0) {
           this.setState({
-            isSuc:false,
-            isMen:false,
-            isWomen:false,
-            isElectronic:false,
-            jewellaryProduct:jewellaryProducts, 
-            isjwewllary:true,
+                isSuc:false,
+                 products:[],
+                 products:jewellaryProducts,
+                 isSuc:true
           }, () => {
             console.log(this.state.jewellaryProduct);
           });
@@ -134,12 +105,10 @@ electronics = () => {
         const electronicsProducts = response.filter((product) => product.category === "electronics");
         if (electronicsProducts.length > 0) {
           this.setState({
-            isSuc:false,
-            isMen:false,
-           isWomen:false,
-           isjwewllary:false,
-        electronicsProduct:electronicsProducts, 
-            isElectronic:true
+                isSuc:false,
+                 products:[],
+                 products:electronicsProducts,
+                 isSuc:true
           }, () => {
             console.log(this.state.electronicsProduct);
           });
@@ -153,37 +122,79 @@ electronics = () => {
         return(
             <>
             <div  style={{ position: "sticky", top: "0", backgroundColor: "white", zIndex: "1000" }}>
-            <button onClick={this.allCategery} style={{borderRadius:"10px",display:"inline",margin:"10px",backgroundColor: "transparent",transition: "background-color 0.1s",}}
-            onMouseEnter={(e) => e.target.style.backgroundColor = "pink"}
-            onMouseLeave={(e) => e.target.style.backgroundColor = "transparent"}
-            ><h2 >Click to show all products</h2></button>
-            <button onClick={this.mens} style={{borderRadius:"10px",display:"inline",margin:"10px",backgroundColor: "transparent",transition: "background-color 0.1s",}}
-                        onMouseEnter={(e) => e.target.style.backgroundColor = "pink"}
-                        onMouseLeave={(e) => e.target.style.backgroundColor = "transparent"}
-            ><h2 >Men's</h2></button>
-            <button onClick={this.womens} style={{borderRadius:"10px",display:"inline",margin:"10px",backgroundColor: "transparent",transition: "background-color 0.1s",}}
-                        onMouseEnter={(e) => e.target.style.backgroundColor = "pink"}
-                        onMouseLeave={(e) => e.target.style.backgroundColor = "transparent"}
+            <button onClick={this.allCategery} style={{borderRadius:"10px",display:"inline",margin:"10px",backgroundColor: "transparent",transition: "background-color 0.1s",width:"140px"}}
+            onMouseEnter={(e) => {
+                e.target.style.backgroundColor = "black";
+                e.target.style.color = "white";
+            }}
+            
+            onMouseLeave={(e) => {
+                e.target.style.backgroundColor = "white";
+                e.target.style.color = "black";
+            }}
+            ><h2 >All Products</h2></button>
+            <button onClick={this.mens} style={{borderRadius:"10px",display:"inline",margin:"10px",backgroundColor: "transparent",transition: "background-color 0.1s",width:"140px"}}
+                        onMouseEnter={(e) => {
+                            e.target.style.backgroundColor = "black";
+                            e.target.style.color = "white";
+                        }}
+                        
+                        onMouseLeave={(e) => {
+                            e.target.style.backgroundColor = "white";
+                            e.target.style.color = "black";
+                        }}
+            ><h2 >Men's </h2></button>
+            <button onClick={this.womens} style={{borderRadius:"10px",display:"inline",margin:"10px",backgroundColor: "transparent",transition: "background-color 0.1s",width:"140px"}}
+                         onMouseEnter={(e) => {
+                            e.target.style.backgroundColor = "black";
+                            e.target.style.color = "white";
+                        }}
+                        
+                        onMouseLeave={(e) => {
+                            e.target.style.backgroundColor = "white";
+                            e.target.style.color = "black";
+                        }}
             ><h2 >Women's</h2></button>
-            <button onClick={this.jewellary} style={{borderRadius:"10px",display:"inline",margin:"10px",backgroundColor: "transparent",transition: "background-color 0.1s",}}
-                        onMouseEnter={(e) => e.target.style.backgroundColor = "pink"}
-                        onMouseLeave={(e) => e.target.style.backgroundColor = "transparent"}
+            <button onClick={this.jewellary} style={{borderRadius:"10px",display:"inline",margin:"10px",backgroundColor: "transparent",transition: "background-color 0.1s",width:"140px"}}
+                        onMouseEnter={(e) => {
+                            e.target.style.backgroundColor = "black";
+                            e.target.style.color = "white";
+                        }}
+                        
+                        onMouseLeave={(e) => {
+                            e.target.style.backgroundColor = "white";
+                            e.target.style.color = "black";
+                        }}
             ><h2 >Jewellary</h2></button>
-            <button onClick={this.electronics} style={{borderRadius:"10px",display:"inline",margin:"10px",backgroundColor: "transparent",transition: "background-color 0.1s",}}
-                        onMouseEnter={(e) => e.target.style.backgroundColor = "pink"}
-                        onMouseLeave={(e) => e.target.style.backgroundColor = "transparent"}
+            <button onClick={this.electronics} style={{borderRadius:"10px",display:"inline",margin:"10px",backgroundColor: "transparent",transition: "background-color 0.1s",width:"140px"}}
+                         onMouseEnter={(e) => {
+                            e.target.style.backgroundColor = "black";
+                            e.target.style.color = "white";
+                        }}
+                        
+                        onMouseLeave={(e) => {
+                            e.target.style.backgroundColor = "white";
+                            e.target.style.color = "black";
+                        }}
             ><h2 >Electronics</h2></button>
             <hr></hr>
             </div>
 
+       
+
+
+{/* counting product */}
+            {this.state.isSuc && (
+    <h2
+    style={{position: "fixed", top: "100px",right:"750px", backgroundColor: "white", zIndex: "1000" }}>Total count: {this.state.products.length}</h2>
+) }
 
 
 
-
-
+{/* showing productsto the UI */}
 
             {
-                this.state.isSuc ? (
+                this.state.isSuc && ( 
                 this.state.products.map((eachProduct)=>{
                   return (
                     <>
@@ -207,9 +218,7 @@ electronics = () => {
                   )
 
                 }))
-                : (
-                <h1></h1>
-            )}
+                }
 
 
 
@@ -224,13 +233,13 @@ electronics = () => {
 
 
        {
-
-
-this.state.isMen ? (
+        
+this.state.isMen && (
                     this.state.mensProduct.map((eachProduct) => {
                         return (
                             <div style={{width:"300px",borderRadius:"20%",border:"4px solid gray",margin:"10px"}}>
                     <center>
+                        
                      <h1>id : {eachProduct["id"]}</h1>
                      <Image src={eachProduct.image}/>
                      <h2>Price : {eachProduct["price"]}</h2>
@@ -243,9 +252,7 @@ this.state.isMen ? (
                            
                         )
                     })
-                ) : (
-                <h1></h1>
-            )
+                )
 
 }
 
@@ -257,7 +264,7 @@ this.state.isMen ? (
 
 
 
-this.state.isWomen ? (
+this.state.isWomen && (
     this.state.womensProduct.map((eachProduct) => {
         return (
             <div style={{width:"300px",borderRadius:"20%",border:"4px solid gray",margin:"10px"}}>
@@ -274,9 +281,7 @@ this.state.isWomen ? (
            
         )
     })
-) : (
-<h1></h1>
-)
+) 
 
 
 
@@ -289,7 +294,7 @@ this.state.isWomen ? (
 
 
 
-this.state.isjwewllary ? (
+this.state.isjwewllary && (
     this.state.jewellaryProduct.map((eachProduct) => {
         return (
             <div style={{width:"300px",borderRadius:"20%",border:"4px solid gray",margin:"10px"}}>
@@ -306,8 +311,6 @@ this.state.isjwewllary ? (
            
         )
     })
-) : (
-<h1></h1>
 )
 
        }
@@ -319,7 +322,7 @@ this.state.isjwewllary ? (
 
             {
 
-this.state.isElectronic ? (
+this.state.isElectronic && (
     this.state.electronicsProduct.map((eachProduct) => {
         return (
             <div style={{width:"300px",borderRadius:"20%",border:"4px solid gray",margin:"10px"}}>
@@ -336,9 +339,7 @@ this.state.isElectronic ? (
            
         )
     })
-) : (
-<h1></h1>
-) 
+)
 
             }
             
